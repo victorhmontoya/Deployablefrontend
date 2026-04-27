@@ -11,4 +11,4 @@ FROM nginx:alpine
 ADD ./config/default.conf /etc/nginx/conf.d/default.conf
 COPY --from=buildtodeploy /app/.next/ /var/www/app/
 EXPOSE 80
-CMD ["mgnix","-g","daemon off;"]
+CMD ["nginx","-g","daemon off;"]
